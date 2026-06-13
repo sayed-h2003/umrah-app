@@ -1,16 +1,21 @@
-var CACHE_NAME = 'umrah-pwa-v1';
+const CACHE_NAME = 'umrah-v1';
+const assets = [
+  '/umrah-app/',
+  '/umrah-app/index.html',
+  '/umrah-app/manifest.json'
+];
 
-self.addEventListener('install', function(e) {
+self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(['./', './manifest.json']);
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(assets);
     })
   );
 });
 
-self.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(function(response) {
+    caches.match(e.request).then(response => {
       return response || fetch(e.request);
     })
   );
