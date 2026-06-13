@@ -1,16 +1,17 @@
 {
-  "name": "نظام إشعارات العمرة",
-  "short_name": "العمرة Pro",
-  "description": "نظام إدارة رحلات العمرة الذكي",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#f1f5f9",
-  "theme_color": "#1e3d59",
-  "orientation": "portrait",
-  "lang": "ar",
-  "dir": "rtl",
+  "short_name": "العمرة الذكي",
+  "name": "نظام العمرة الذكي",
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
-  ]
+    {
+      "src": "https://flaticon.com",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/umrah-app/index.html",
+  "background_color": "#1e3d59",
+  "theme-color": "#1e3d59",
+  "display": "standalone",
+  "orientation": "portrait"
 }
