@@ -1,6 +1,6 @@
 {
-  "short_name": "العمرة الذكي",
-  "name": "نظام العمرة الذكي",
+  "short_name": "اشعارات العمرة",
+  "name": "نظام اشعارات العمرة",
   "icons": [
     {
       "src": "https://flaticon.com",
@@ -9,7 +9,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/umrah-app/index.html",
+  "start_url": ".",
   "background_color": "#1e3d59",
   "theme-color": "#1e3d59",
   "display": "standalone",
