@@ -1,11 +1,22 @@
-self.addEventListener('install', (e) => {
-  self.skipWaiting();
+const CACHE_NAME = 'umrah-v1';
+const assets = [
+  '/umrah-app/',
+  '/umrah-app/index.html',
+  '/umrah-app/manifest.json'
+];
+
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(assets);
+    })
+  );
 });
 
-self.addEventListener('activate', (e) => {
-  return self.clients.claim();
-});
-
-self.addEventListener('fetch', (e) => {
-  // ممرر فارغ لتلبية شروط PWA الأساسية فقط
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
+  );
 });
